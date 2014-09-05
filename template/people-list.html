@@ -1,0 +1,37 @@
+<section class="{{people.id}} box people" ng-repeat="people in peopleListCtrl.list">
+	<div class="text-info">{{people.name}} {{people.isActive ? '(active)':'(inactive)'}}</div>
+	<hr />
+	<img class="center-block" ng-src="{{people.picture}}" />
+        <hr />
+        <section ng-controller="PanelController as panel">
+                <ul class="nav nav-pills">
+                        <li ng-class="{active:panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Profile</a></li>
+                        <li ng-class="{active:panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">About</a></li>
+                        <li ng-class="{active:panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Friends</a></li>
+                </ul>
+        
+
+                <div class="panel" ng-show="panel.isSelected(1)">
+                        <h4>Profile</h4>
+                        <span>Age: {{people.age}}</span>
+                        <span>Gender: {{people.gender}}</span>
+                        <span>Eye color: {{people.eyeColor}}</span>
+                        <span>Email: {{people.email}}</span>
+                        <span>Phone: {{people.phone}}</span>
+                        <span>Address: {{people.address}}</span>
+                        <span>Company: {{people.company}}</span>
+                        <span>Location: {{people.latitude}} {{people.longitude}}</span>
+                        <span>Registered: {{people.registered}}</span>
+                </div>
+        	
+                <div class="panel" ng-show="panel.isSelected(2)">
+                        <h4>About</h4>
+                        <span>{{people.about}}</span>
+                </div>
+
+                <div class="panel" ng-show="panel.isSelected(3)">
+                        <h4>Friends</h4>
+                        <span ng-repeat="friend in people.friends">{{friend.name}}</span>
+                </div>
+        </section>
+</section>
