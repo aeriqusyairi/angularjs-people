@@ -1,7 +1,8 @@
 angularjs-people
 ================
 
-Simple people management using angular js. 
+Simple people management using angular js.
+
 Just for fun sake.
 
 Todo
