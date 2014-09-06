@@ -6,5 +6,12 @@ app.service('peopleService', ['$http', function($http){
 	//parse people list from api
 	this.getPeopleList = function(){
 		return $http.get(apiUrl + '?scope=list');
-	}
+	};
+
+	//mock add for now
+	this.addNewPeople = function(people){
+		//this will do for now
+		console.log(people);
+	};
+	
 }]);

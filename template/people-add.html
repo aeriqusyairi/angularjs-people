@@ -1,0 +1,81 @@
+<h2>Add New People</h2>
+<hr />
+<form role="form" name="addPeopleForm" ng-submit="addPeopleForm.$valid && peopleAddCtrl.addPeople(peopleListCtrl.list)" novalidate>
+    
+    <!--name-->
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Enter people's name" ng-model="peopleAddCtrl.people.name" required />
+    </div>
+
+    <!--age-->
+    <div class="form-group">
+        <label for="age">Age</label>
+        <select name="age" class="form-control" ng-model="peopleAddCtrl.people.age" required>
+            <option>1</option>
+        </select>
+    </div>
+
+    <!--gender-->
+    <div class="radio-inline">
+        <label>
+            <input type="radio" name="gender" value="male" ng-model="peopleAddCtrl.people.gender" checked />
+            Male
+        </label>
+    </div>
+    <div class="radio-inline">
+        <label>
+            <input type="radio" name="gender" value="female" ng-model="peopleAddCtrl.people.gender" />
+            Female
+        </label>
+    </div>
+
+    <!--eye color-->
+    <div class="form-group">
+        <label for="eyecolor">Eye color</label>
+        <select name="eyecolor" class="form-control" ng-model="peopleAddCtrl.people.eyecolor" required>
+            <option>Brown</option>
+        </select>
+    </div>
+
+    <!--email-->
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Enter email" ng-model="peopleAddCtrl.people.email" required />
+    </div>
+
+    <!--phone-->
+    <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" name="phone" placeholder="Enter phone number" ng-model="peopleAddCtrl.people.phone" required />
+    </div>
+
+    <!--address-->
+    <label for="address">Address</label>
+    <textarea class="form-control" rows="3" name="address" ng-model="peopleAddCtrl.people.address" required></textarea>
+
+    <!--company-->
+    <div class="form-group">
+        <label for="company">Company</label>
+        <input type="text" class="form-control" name="company" placeholder="Enter company name" ng-model="peopleAddCtrl.people.company" required />
+    </div>
+
+    <!--location-->
+    <div class="form-group">
+        <label>Location</label>
+        <input type="text" class="form-control" name="latitute" placeholder="latitude" ng-model="peopleAddCtrl.people.latitude" required />
+        <input type="text" class="form-control" name="longitude" placeholder="longitude" ng-model="peopleAddCtrl.people.longitude" required/>
+    </div>
+
+    <!--about-->
+    <label for="about">About</label>
+    <textarea class="form-control" rows="3" name="about" ng-model="peopleAddCtrl.people.about" required></textarea>
+
+    <div>Form is {{addPeopleForm.$valid}}</div>
+
+    <!--submit-->
+    <div class="clearfix">
+        <button type="submit" class="btn btn-default pull-right">Add</button>
+    </div>
+
+</form>
