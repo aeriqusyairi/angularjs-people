@@ -6,6 +6,15 @@ hr {margin-top:5px; margin-bottom: 8px;}
 .label {font-size:120%; padding-right:10px;}
 .buttons{padding: 20px;}
 
+/*just fixing the panel. no big deal*/
 .people .panel > span{
 	display: block;
+}
+
+/*form validity indicator*/
+.ng-invalid.ng-dirty{
+	border-color: #FA787E;
+}
+.ng-valid.ng-dirty{
+	border-color: #78FA89;
 }
