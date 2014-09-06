@@ -1,6 +1,11 @@
 <?php
 header('Content-type: application/json');
 
+if(isset($_GET['scope']) && !empty($_GET['scope'])){
+  $scope = $_GET['scope'];
+
+  if($scope == 'list'){
+
 echo '
   [
   {
@@ -581,3 +586,16 @@ echo '
   }
 ]
 ';
+}else{
+  invalid();
+}
+
+
+}else{
+  invalid();
+}
+
+function invalid(){
+  echo '{"status": "invalid request"}';
+}
+
