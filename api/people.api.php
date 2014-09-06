@@ -1,9 +1,14 @@
 <?php
+/**
+ * People's Api
+ * @author aeriqusyairi
+ */
 header('Content-type: application/json');
 
 if(isset($_GET['scope']) && !empty($_GET['scope'])){
   $scope = $_GET['scope'];
 
+  //output list of people
   if($scope == 'list'){
 
 echo '
