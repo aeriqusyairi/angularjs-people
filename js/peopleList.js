@@ -1,13 +1,13 @@
-app.directive('peopleList', ['$http', function($http){
+app.directive('peopleList', function(peopleService){
 	return {
 		restrict: 'E',
 		templateUrl: 'template/people-list.html',
 		controller: function(){
 			var peopleList = this;
-			$http.get('api/people.api.php').success(function(data){
+			peopleService.getPeopleList().success(function(data){
 				peopleList.list = data;
 			});
 		},
 		controllerAs: 'peopleListCtrl'
 	};
-}]);
+});
