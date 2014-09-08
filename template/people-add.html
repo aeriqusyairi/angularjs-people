@@ -2,6 +2,9 @@
 <hr />
 <form role="form" name="addPeopleForm" ng-submit="addPeopleForm.$valid && peopleAddCtrl.addPeople(peopleListCtrl.list)" novalidate>
     
+    <!--Form validity indicator-->
+    <div>Form is {{addPeopleForm.$valid ? 'valid':'invalid'}}</div>
+    
     <!--name-->
     <div class="form-group">
         <label for="name">Name</label>
@@ -70,8 +73,6 @@
     <!--about-->
     <label for="about">About</label>
     <textarea class="form-control" rows="3" name="about" ng-model="peopleAddCtrl.people.about" required></textarea>
-
-    <div>Form is {{addPeopleForm.$valid}}</div>
 
     <!--submit-->
     <div class="clearfix">
