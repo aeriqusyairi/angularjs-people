@@ -6,21 +6,21 @@ angular.module('peopleApp', ['utilityApp'])
 	var apiUrl = 'api/people.api.php';
 
 	//parse people list from api
-	this.getPeopleList = function(){
+	this.getList = function(){
 		return $http.get(apiUrl + '?scope=list');
 	};
 
 	//get api to add new people
-	this.addNewPeople = function(people){
+	this.add = function(people){
 		//this will do for now
 		console.log(people);
 	};
 
 	//get api to delete existing people by id
-	this.deletePeople = function(id){
+	this.delete = function(id){
 		//again, mocking it
-		console.log(id);
-	}
+		console.log("delete "+id);
+	};
 	
 }])
 
@@ -38,11 +38,12 @@ angular.module('peopleApp', ['utilityApp'])
 				list.unshift(this.people);
 
 				//actually add new people here
-				peopleService.addNewPeople(this.people);
+				peopleService.add(this.people);
 
 				//clear the form after submission
 				this.people = {};
 			};
+
 		},
 		controllerAs: 'peopleAddCtrl'
 	};
@@ -56,9 +57,13 @@ angular.module('peopleApp', ['utilityApp'])
 		controller: function(){
 			//get people list from service
 			var peopleList = this;
-			peopleService.getPeopleList().success(function(data){
+			peopleService.getList().success(function(data){
 				peopleList.list = data;
 			});
+
+			this.removePeople = function(id){
+				peopleService.delete(id);
+			};
 		},
 		controllerAs: 'peopleListCtrl'
 	};

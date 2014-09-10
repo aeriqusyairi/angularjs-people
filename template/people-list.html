@@ -1,5 +1,5 @@
 <section class="{{people.id}} box people" ng-repeat="people in peopleListCtrl.list">
-	<div class="text-info">{{people.name}} {{people.isActive ? '(active)':'(inactive)'}}</div>
+	<div class="text-info">{{people.name}} {{people.isActive ? '(active)':'(inactive)'}} <a class="pull-right" href ng-click="peopleListCtrl.removePeople(people.id)">Delete</a></div>
 	<hr />
 	<img class="center-block" ng-src="{{people.picture}}" />
         <hr />
