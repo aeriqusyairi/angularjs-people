@@ -55,6 +55,8 @@ angular.module('peopleApp', ['utilityApp'])
 		restrict: 'E',
 		templateUrl: 'template/people-list.html',
 		controller: function(){
+			//eyecolor definition
+			this.eyeColor = ['Blue','Red and violet', 'Hazel', 'Grey', 'Amber', 'Green', 'Brown'];
 			//get people list from service
 			var peopleList = this;
 			peopleService.getList().success(function(data){
