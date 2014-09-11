@@ -1,4 +1,4 @@
-angular.module('peopleApp', ['utilityApp'])
+angular.module('peopleApp', ['utilityApp', 'ngProgress'])
 
 //parse from people api
 .service('peopleService', ['$http', function($http){
@@ -54,14 +54,22 @@ angular.module('peopleApp', ['utilityApp'])
 	return {
 		restrict: 'E',
 		templateUrl: 'template/people-list.html',
-		controller: function(){
+		controller: function(ngProgress){
+
 			//eyecolor definition
 			this.eyeColor = ['Blue','Red and violet', 'Hazel', 'Grey', 'Amber', 'Green', 'Brown'];
+			
 			//get people list from service
 			var peopleList = this;
+			
+			ngProgress.start();
+
 			peopleService.getList().success(function(data){
 				peopleList.list = data;
 			});
+
+			ngProgress.complete();
+			
 
 			this.removePeople = function(id){
 				peopleService.delete(id);

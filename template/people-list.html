@@ -1,5 +1,5 @@
 <section class="{{people.id}} box people" ng-repeat="people in peopleListCtrl.list">
-	<div class="text-info">{{people.name}} {{(people.is_active == 1) ? '(active)':'(inactive)'}} <a class="pull-right" href ng-click="peopleListCtrl.removePeople(people.id)">Delete</a></div>
+	<div class="text-info"><a href="#">{{people.name}}</a> {{(people.is_active == 1) ? '(active)':'(inactive)'}} <a class="pull-right" href ng-click="peopleListCtrl.removePeople(people.id)">Delete</a></div>
 	<hr />
 	<img class="center-block" ng-src="{{people.picture}}" />
         <hr />
@@ -31,7 +31,7 @@
 
                 <div class="panel" ng-show="panel.isSelected(3)">
                         <h4>Friends</h4>
-                        <span ng-repeat="friend in people.friends" id="{{friend.id}}">{{friend.name}}test</span>
+                        <span ng-repeat="friend in people.friends" id="{{friend.id}}"><a href="#">{{friend.name}}</a></span>
                 </div>
         </section>
 </section>
