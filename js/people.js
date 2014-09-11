@@ -1,4 +1,4 @@
-angular.module('peopleApp', ['utilityApp', 'ngProgress'])
+angular.module('peopleApp', ['utilityApp', 'ngProgress', 'routeApp'])
 
 //parse from people api
 .service('peopleService', ['$http', function($http){

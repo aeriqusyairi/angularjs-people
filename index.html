@@ -50,21 +50,9 @@
         		</div>
         	</div>
 
-        	<div class="row">
+        	<div class="row" ng-view>
         		
-                <!--people-list section-->
-        		<div class="col-sm-6">
-        			<div class="well">
-        				<people-list></people-list>
-        			</div>
-        		</div>
-
-                <!--form for adding new people-->
-                <div class="col-sm-6">
-                    <div class="well">
-                        <people-add></people-add>
-                    </div>
-                </div>
+                <!--Routed content goes here-->
 
             </div>
 
@@ -72,9 +60,11 @@
 
         <!--JS-->
         <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+        <script src="https://code.angularjs.org/1.2.24/angular-route.min.js"></script>
         <script src="js/vendor/ngProgress-1.0.6.js"></script>
-        <script src="js/people.js"></script>
         <script src="js/utility.js"></script>
+        <script src="js/route.js"></script>
+        <script src="js/people.js"></script>
         
     </body>
 </html>
