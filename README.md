@@ -10,5 +10,5 @@ Todo
 
 1. simple login functionality
 2. admin functionality (create,remove, etc)
-3. use redis for data storage 
+3. simple database
 4. any idea?
